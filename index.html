@@ -3,9 +3,112 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my pj</title>
+    <title>Minjo Portfolio</title>
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <h1>my pj</h1>
+    <span class="fixed fixed--pos-tl fixed--role-logo">my portfolio</span>
+
+    <a
+      class="fixed fixed--pos-tr fixed--role-contact -mjbutton"
+      href="mailto:minj07022@naver.com"
+    >
+    </a>
+
+    <!-- <a class="fixed fixed--pos-tr fixed--role-contact" href="#"
+      >info@backstagetalks.com</a
+    > -->
+    <ol class="fixed fixed--pos-br fixed--role-list">
+      <!-- (li>a>[href="#issue-$"]>{issue #$})*7 -->
+      <li><a href="#work-1">work ✦ 1</a></li>
+      <li><a href="#work-2">work ✦ 2</a></li>
+      <li><a href="#work-3">work ✦ 3</a></li>
+      <li><a href="#work-4">work ✦ 4</a></li>
+      <li><a href="#work-5">work ✦ 5</a></li>
+      <li><a href="#work-6">work ✦ 6</a></li>
+      <li><a href="#work-aboutme">about me</a></li>
+    </ol>
+    <div class="fixed fixed--pos-bl fixed--role-about">
+      <p class="fixed__desc">
+        Backstage Talks is a magazine of casual, but in depth dialogues on
+        design and business. Our decisions shape and influence this complex
+        world—to have a chance to make the right ones, we need to talk.
+      </p>
+      <p class="fixed__copyright">
+        © 2024 <a href="#">Published by Büro Milk</a>
+      </p>
+      <a class="fixed__policy" href="#">Privacy Policy</a>
+    </div>
+    <!-- (#issue-$.issue.issue--no-$>img[src="./assets/bts ($).png"].issue__img+.issue__text>(p.issue__title>{issue #$})+p.issue__link>{buy here})*7 -->
+    <div class="wrapper">
+      <div id="work-1" class="work work--no-1">
+        <img src="./assets/bts (6).png" alt="" class="work__img" />
+        <div class="work__text">
+          <p class="work__title">work ✦ 1</p>
+          <a href="1.html" class="work__button">explore</a>
+        </div>
+      </div>
+      <div id="work-2" class="work work--no-2">
+        <img src="./assets/bts (2).png" alt="" class="work__img" />
+        <div class="work__text">
+          <p class="work__title">work ✦ 2</p>
+          <a href="#work-1" class="work__button">explore</a>
+        </div>
+      </div>
+      <div id="work-3" class="work work--no-3">
+        <img src="./assets/bts (3).png" alt="" class="work__img" />
+        <div class="work__text">
+          <p class="work__title">work ✦ 3</p>
+          <a href="#work-1" class="work__button">explore</a>
+        </div>
+      </div>
+      <div id="work-4" class="work work--no-4">
+        <img src="./assets/bts (4).png" alt="" class="work__img" />
+        <div class="work__text">
+          <p class="work__title">issue ✦ 4</p>
+          <a href="#work-1" class="work__button">explore</a>
+        </div>
+      </div>
+      <div id="work-5" class="work work--no-5">
+        <img src="./assets/bts (5).png" alt="" class="work__img" />
+        <div class="work__text">
+          <p class="work__title">work ✦ 5</p>
+          <a href="#work-1" class="work__button">explore</a>
+        </div>
+      </div>
+      <div id="work-6" class="work work--no-6">
+        <img src="./assets/bts (6).png" alt="" class="work__img" />
+        <div class="work__text">
+          <p class="work__title">work ✦ 6</p>
+          <a href="#work-1" class="work__button">explore</a>
+        </div>
+      </div>
+      <div id="work-aboutme" class="work work-about-me">
+        <div class="work__aboutme">
+          <!-- <p class="issue__title">about me</p> -->
+          <p class="work__link">
+            안녕하세요! 저는 디자인과 관련된 일을 좋아하는 김민조입니다. 디자인
+            철학에 대한 깊은 이해와 실제 경험을 바탕으로 창의적인 문제
+            해결과아름다운 디자인을 추구합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer섹션 -->
+    <div class="footer">
+      <a class="footer__contact" href="#">info@backstagetalks.com</a>
+      <div class="footer__about">
+        <p class="fixed__desc">
+          Backstage Talks is a magazine of casual, but in depth dialogues on
+          design and business. Our decisions shape and influence this complex
+          world—to have a chance to make the right ones, we need to talk.
+        </p>
+        <p class="fixed__copyright">
+          © 2024 <a href="#">Published by Büro Milk</a>
+        </p>
+        <a class="fixed__policy" href="#">Privacy Policy</a>
+      </div>
+    </div>
   </body>
 </html>
