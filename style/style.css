@@ -264,7 +264,7 @@ a.fixed, .fixed a {
 .fixed--role-contact:hover {
   color: #fff;
   text-decoration: none;
-  background-color: #381fd1;
+  background-color: #e646ff;
   transform: scale(1.1);
 }
 .fixed--role-contact::before {
