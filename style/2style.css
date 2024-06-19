@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap';
 :root {
   --fixed-m-x: 0.9375rem;
@@ -27,8 +28,7 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 1.125rem;
   line-height: 1.5625rem;
-  background-color: #fd5f8d;
-  background-color: #ffbe00;
+  background-color: #fff;
   animation-timeline: scroll;
 }
 
@@ -182,7 +182,6 @@ a.fixed, .fixed a {
 .fixed--role-about {
   max-width: 30ch;
   font-weight: 700;
-  text-wrap: balance;
 }
 @media (max-width: 62.5rem) {
   .fixed--role-about {
@@ -240,9 +239,12 @@ a.fixed, .fixed a {
   display: flex;
   grid-row: 2;
   grid-column: 2;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   text-align: center;
 }
-.work__tittle {
+.work__title {
   margin-block: 0;
   font-weight: 700;
   text-transform: capitalize;
@@ -286,4 +288,30 @@ a.fixed, .fixed a {
   font-size: 2rem;
   font-weight: 600;
   text-transform: capitalize;
+}
+
+.close-button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  background-color: #10284b;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+.close-button:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #e646ff;
+  transform: scale(1.1);
+}
+
+#lottie-container {
+  width: 200px; /* 애니메이션 너비 설정 */
+  height: 200px; /* 애니메이션 높이 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
 }
