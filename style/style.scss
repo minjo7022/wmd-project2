@@ -24,7 +24,7 @@ $bp-sm: 35rem;
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  @media (width < $bp-lg) {
+  @media (max-width: $bp-lg) {
     scroll-snap-type: none;
   }
 }
@@ -34,39 +34,105 @@ body {
   font-family: Roboto, sans-serif;
   font-size: 1.125rem;
   line-height: 1.5625rem;
-  background-color: list.nth($bgcolors, 7);
-  animation-name: bg-change;
-  animation-timeline: scroll();
-
-  //   @media (width < $bp-lg) {
-
-  //   }
+  background-color: nth($bgcolors, 7);
+  background-color: #ffbe00;
+  animation-timeline: scroll;
 }
 
 @keyframes bg-change {
   @for $i from 0 through 5 {
-    #{100 / 6 * $i}#{'%'},
-    #{100 / 6 * $i + 100 / 12}#{'%'} {
-      background-color: list.nth($bgcolors, 7 - $i);
+    #{100 / 6 * $i}%,
+    #{100 / 6 * $i + 100 / 12}% {
+      background-color: nth($bgcolors, 7 - $i);
     }
   }
 
   100% {
-    background-color: list.nth($bgcolors, 1);
+    background-color: nth($bgcolors, 1);
   }
 }
 
 img {
   display: block;
-  overflow: hidden; // 이미지가 넘칠 경우를 대비하여
+  overflow: hidden;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 50%);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding-inline: 1rem;
+  color: #381fd1;
+  text-transform: capitalize;
+  background-color: #f6f6eb;
+
+  &__apper {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    max-width: 60rem;
+    margin: 0 auto;
+
+    .nav__logo {
+      font-weight: 900;
+    }
+
+    .menu {
+      list-style: none;
+
+      &--pos-left {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      &--pos-right {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-end;
+      }
+
+      .menu__item {
+        display: grid;
+        align-items: center;
+        height: 2rem;
+        padding-inline: 0.5rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+        color: inherit;
+        text-decoration: none;
+        text-transform: uppercase;
+        border: 0.125rem solid transparent;
+        border-radius: 0.375rem;
+        transition: border-color 0.3s ease;
+
+        &:hover {
+          border-color: #ffbe00;
+        }
+
+        &--style-filled {
+          color: #f6f6eb;
+          background-color: #381fd1;
+          border-color: #381fd1;
+        }
+
+        @media (width <= 677px) {
+          &--style-filled {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 }
 
 .fixed {
   position: fixed;
-
-  // display: none;
-
   z-index: 2;
 
   @at-root a#{&},
@@ -84,45 +150,24 @@ img {
       left: var(--fixed-m-x);
     }
 
-    &-tr {
-      top: var(--fixed-m-y);
-      right: var(--fixed-m-x);
-    }
-
     &-br {
       right: var(--fixed-m-x);
       bottom: var(--fixed-m-y);
     }
-
-    &-bl {
-      // 오른쪽 어느정도 갭 만들어둠
-      right: calc(var(--fixed-m-x) + 4rem + 6.25rem);
-      bottom: var(--fixed-m-y);
-      left: var(--fixed-m-x);
-    }
   }
 
   &--role {
-    &-logo {
-      height: var(--logo-h);
-      aspect-ratio: 519 / 58;
-      @media (width < $bp-md) {
-        height: var(--logo-h-md);
-      }
-    }
-
     &-contact {
       font-weight: 700;
       text-decoration: none;
-      @media (width < $bp-lg) {
+
+      @media (max-width: $bp-lg) {
         display: none;
       }
 
       &:hover {
         text-decoration: underline;
       }
-
-      // text-decoration: none;
     }
 
     &-list {
@@ -132,7 +177,8 @@ img {
       text-transform: capitalize;
       list-style: none;
       transform: rotate(180deg);
-      @media (width < $bp-lg) {
+
+      @media (max-width: $bp-lg) {
         display: none;
       }
 
@@ -152,11 +198,9 @@ img {
     &-about {
       max-width: 30ch;
       font-weight: 700;
-
-      // 줄바꿈 예쁘게
       text-wrap: balance;
 
-      @media (width < $bp-lg) {
+      @media (max-width: $bp-lg) {
         display: none;
       }
     }
@@ -175,8 +219,6 @@ img {
 
   &__policy {
     display: block;
-
-    // 1lh= 라인하이트
     margin-top: 1lh;
 
     &:hover {
@@ -185,41 +227,40 @@ img {
   }
 }
 
-// #issue {
-//   @for $i from 1 through 7 {
-//     &-#{$i} {
-//       background-color: list.nth($bgcolors, $i);
-//     }
-//   }
-// }
-
 .wrapper {
-  z-index: 1;
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  max-width: 75rem;
+  padding: 3rem;
+  margin-inline: auto;
+  text-transform: capitalize;
+  background-color: oklch(95% 0 0deg);
 }
 
 .work {
+  &__img {
+    grid-row: 2;
+    grid-column: 2;
+    justify-self: stretch;
+    transition: all 0.3s ease;
+
+    &:hover {
+      filter: brightness(0.5);
+    }
+  }
+
   display: grid;
-  grid-template-rows:
-    minmax(calc(2 * var(--fixed-m-y) + var(--logo-h)), 1fr)
-    auto 5lh minmax(calc(2 * var(--fixed-m-y)), 1fr);
+  grid-template-rows: minmax(calc(2 * var(--fixed-m-y) + var(--logo-h)), 1fr) auto 5lh minmax(
+      calc(2 * var(--fixed-m-y)),
+      1fr
+    );
   grid-template-columns: minmax(var(--fixed-m-x), 1fr) minmax(0, 26.25rem) minmax(
       var(--fixed-m-x),
       1fr
     );
-
-  // 뷰포트의 높이
-  min-height: 100svh;
-  scroll-snap-align: center;
-
-  &__img {
-    grid-row: 2;
-    grid-column: 2;
-
-    // 이미지 가로에 딱 맞게 들어가고 더 커지지 않도록 제어
-    justify-self: stretch;
-  }
 
   &__text {
     grid-row: 3;
@@ -232,8 +273,6 @@ img {
     grid-row: 2;
     grid-column: 2;
     text-align: center;
-
-    // text-wrap: balance;
   }
 
   &__tittle {
@@ -241,139 +280,46 @@ img {
     font-weight: 700;
     text-transform: capitalize;
   }
-
-  // &__button {
-  //   margin-block: 1lh 0;
-  //   font-weight: 700;
-  //   text-transform: uppercase;
-  // }
-  &__button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    font-weight: 700;
-    color: currentcolor;
-    text-decoration: none;
-    text-transform: uppercase;
-    background-color: #fff;
-    border: 2px solid currentcolor;
-    border-radius: 0.25rem;
-    transition: background-color 0.3s, color 0.3s;
-
-    &:hover {
-      color: #fff;
-      background-color: #e646ff;
-    }
-  }
-}
-
-.footer {
-  display: none;
-  @media (width < $bp-lg) {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: end;
-    justify-content: space-between;
-    padding-inline: var(--fixed-m-x);
-    padding-bottom: var(--fixed-m-y);
-  }
-  @media (width < $bp-sm) {
-    flex-direction: column-reverse;
-    gap: 1lh;
-    align-items: center;
-    justify-content: center;
-  }
-
-  @at-root a#{&},
-    & a {
-    color: currentcolor;
-  }
-
-  &__contact {
-    right: var(--fixed-m-x);
-    bottom: var(--fixed-m-y);
-    font-weight: 700;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__about {
-    max-width: 30ch;
-    font-weight: 700;
-
-    // 줄바꿈 예쁘게
-    text-wrap: balance;
-    @media (width < $bp-sm) {
-      max-width: unset;
-      text-align: center;
-    }
-  }
-
-  &__copyright {
-    font-size: 0.75rem;
-    font-weight: 400;
-
-    > a {
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-
-  &__policy {
-    display: block;
-
-    // 1lh= 라인하이트
-    margin-top: 1lh;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
 }
 
 .fixed--role-contact {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem; // 버튼 너비
-  height: 3rem; // 버튼 높이
-  font-weight: 700; // 글꼴 두껍게
-  text-decoration: none; // 기본 텍스트 장식 제거
-  background-color: #fff; // 기본 배경색
-  border-radius: 50%; // 원형 버튼
+  width: 3rem;
+  height: 3rem;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 50%;
   box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
-  transition: background-color 0.3s, transform 0.3s; // 호버 시 애니메이션
+  transition: background-color 0.3s, transform 0.3s;
 
   &:hover {
-    color: #fff; // 호버 시 글자색 변경
+    color: #fff;
     text-decoration: none;
-    background-color: #e646ff; // 호버 시 배경색 변경
-    transform: scale(1.1); // 호버 시 확대 효과
+    background-color: #381fd1;
+    transform: scale(1.1);
   }
 
   &::before {
     display: block;
-    content: 'MINJO'; // 버튼에 표시할 텍스트
-    opacity: 0; // 기본적으로 텍스트 숨김
-    transition: opacity 0.3s; // 투명도 전환 애니메이션
+    content: 'MINJO';
+    opacity: 0;
+    transition: opacity 0.3s;
   }
 
   &:hover::before {
-    opacity: 1; // 호버 시 텍스트 나타남
+    opacity: 1;
   }
 
   @media (max-width: $bp-lg) {
-    display: none; // 작은 화면에서 숨김
+    display: none;
   }
 }
 
 .fixed--role-logo {
-  font-size: 2rem; // 원하는 크기로 조정
+  font-size: 2rem;
   font-weight: 600;
-
-  // 다른 스타일 속성들도 여기에 추가할 수 있습니다.
   text-transform: capitalize;
 }

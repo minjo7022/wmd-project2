@@ -7,10 +7,26 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <span class="fixed fixed--pos-tl fixed--role-logo">my portfolio</span>
+    <div class="nav">
+      <div class="nav__apper">
+        <div class="nav__logo">portfolio</div>
+        <ul class="menu menu--pos-left">
+          <li><a href="#" class="menu__item">all</a></li>
+          <li><a href="#" class="menu__item">typography</a></li>
+          <li><a href="#" class="menu__item">ui</a></li>
+          <li><a href="#" class="menu__item">motion</a></li>
+          <li><a href="#" class="menu__item">3d</a></li>
+        </ul>
+        <ul class="menu menu--pos-right">
+          <li>
+            <a href="#" class="menu__item menu__item--style-filled">about me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <a
-      class="fixed fixed--pos-tr fixed--role-contact -mjbutton"
+      class="fixed fixed--pos-br fixed--role-contact -mjbutton"
       href="mailto:minj07022@naver.com"
     >
     </a>
@@ -18,17 +34,17 @@
     <!-- <a class="fixed fixed--pos-tr fixed--role-contact" href="#"
       >info@backstagetalks.com</a
     > -->
-    <ol class="fixed fixed--pos-br fixed--role-list">
-      <!-- (li>a>[href="#issue-$"]>{issue #$})*7 -->
-      <li><a href="#work-1">work ✦ 1</a></li>
+    <!-- <ol class="fixed fixed--pos-br fixed--role-list"> -->
+    <!-- (li>a>[href="#issue-$"]>{issue #$})*7 -->
+    <!-- <li><a href="#work-1">work ✦ 1</a></li>
       <li><a href="#work-2">work ✦ 2</a></li>
       <li><a href="#work-3">work ✦ 3</a></li>
       <li><a href="#work-4">work ✦ 4</a></li>
       <li><a href="#work-5">work ✦ 5</a></li>
       <li><a href="#work-6">work ✦ 6</a></li>
       <li><a href="#work-aboutme">about me</a></li>
-    </ol>
-    <div class="fixed fixed--pos-bl fixed--role-about">
+    </ol> -->
+    <!-- <div class="fixed fixed--pos-bl fixed--role-about">
       <p class="fixed__desc">
         Backstage Talks is a magazine of casual, but in depth dialogues on
         design and business. Our decisions shape and influence this complex
@@ -38,9 +54,74 @@
         © 2024 <a href="#">Published by Büro Milk</a>
       </p>
       <a class="fixed__policy" href="#">Privacy Policy</a>
-    </div>
+    </div> -->
     <!-- (#issue-$.issue.issue--no-$>img[src="./assets/bts ($).png"].issue__img+.issue__text>(p.issue__title>{issue #$})+p.issue__link>{buy here})*7 -->
     <div class="wrapper">
+      <div id="work-1" class="work work--no-1">
+        <img src="./assets/bts (6).png" alt="" class="work__img" />
+        <a href="1.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">emotion lab</p>
+        </div>
+      </div>
+      <div id="work-3" class="work work--no-3">
+        <img src="./assets/bts(4).png" alt="" class="work__img" />
+        <a href="3.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">성게</p>
+        </div>
+      </div>
+      <div id="work-5" class="work work--no-5">
+        <img src="./assets/bts(2).png" alt="" class="work__img" />
+        <a href="5.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">ドラえもん</p>
+        </div>
+      </div>
+      <div id="work-9" class="work work--no-9">
+        <img src="./assets/bts(9).JPG" alt="" class="work__img" />
+        <a href="9.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">표지판</p>
+        </div>
+      </div>
+      <div id="work-6" class="work work--no-6">
+        <img src="./assets/bts(1).png" alt="" class="work__img" />
+        <a href="6.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">talk in</p>
+        </div>
+      </div>
+      <div id="work-2" class="work work--no-2">
+        <img src="./assets/bts (5).png" alt="" class="work__img" />
+        <a href="2.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">멍게</p>
+        </div>
+      </div>
+      <div id="work-4" class="work work--no-4">
+        <img src="./assets/bts(3).png" alt="" class="work__img" />
+        <a href="4.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">혼합배출 방지 분리수거 봉투 제안</p>
+        </div>
+      </div>
+      <div id="work-7" class="work work--no-7">
+        <img src="./assets/bts.png" alt="" class="work__img" />
+        <a href="7.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">dream</p>
+        </div>
+      </div>
+      <div id="work-8" class="work work--no-8">
+        <img src="./assets/bts(8).png" alt="" class="work__img" />
+        <a href="8.html" class="work__img"></a>
+        <div class="work__text">
+          <p class="work__title">a meat grilling measuring tool</p>
+        </div>
+      </div>
+
+      <!-- <div class="wrapper">
       <div id="work-1" class="work work--no-1">
         <img src="./assets/bts (6).png" alt="" class="work__img" />
         <div class="work__text">
@@ -81,22 +162,22 @@
         <div class="work__text">
           <p class="work__title">work ✦ 6</p>
           <a href="#work-1" class="work__button">explore</a>
-        </div>
-      </div>
-      <div id="work-aboutme" class="work work-about-me">
-        <div class="work__aboutme">
-          <!-- <p class="issue__title">about me</p> -->
-          <p class="work__link">
-            안녕하세요! 저는 디자인과 관련된 일을 좋아하는 김민조입니다. 디자인
-            철학에 대한 깊은 이해와 실제 경험을 바탕으로 창의적인 문제
-            해결과아름다운 디자인을 추구합니다.
-          </p>
-        </div>
-      </div>
+        </div> -->
     </div>
+    <!-- <div id="work-aboutme" class="work work-about-me">
+      <div class="work__aboutme"> -->
+    <!-- <p class="issue__title">about me</p> -->
+    <!-- <p class="work__link">
+          안녕하세요! 저는 디자인과 관련된 일을 좋아하는 김민조입니다. 디자인
+          철학에 대한 깊은 이해와 실제 경험을 바탕으로 창의적인 문제
+          해결과아름다운 디자인을 추구합니다.
+        </p>
+      </div>
+    </div> -->
+    <!-- </div> -->
 
     <!-- footer섹션 -->
-    <div class="footer">
+    <!-- <div class="footer">
       <a class="footer__contact" href="#">info@backstagetalks.com</a>
       <div class="footer__about">
         <p class="fixed__desc">
@@ -108,7 +189,7 @@
           © 2024 <a href="#">Published by Büro Milk</a>
         </p>
         <a class="fixed__policy" href="#">Privacy Policy</a>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
   </body>
 </html>
