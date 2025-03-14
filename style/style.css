@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap';
 :root {
   --fixed-m-x: 0.9375rem;
@@ -28,7 +29,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.5625rem;
   background-color: #fd5f8d;
-  background-color: #ffbe00;
+  background-color: white;
   animation-timeline: scroll;
 }
 
@@ -66,9 +67,10 @@ img {
   top: 0;
   z-index: 999;
   padding-inline: 1rem;
-  color: #381fd1;
+  color: #000;
   text-transform: capitalize;
-  background-color: #fffff0;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .nav__apper {
   display: grid;
@@ -113,12 +115,12 @@ img {
   transition: border-color 0.3s ease;
 }
 .nav__apper .menu .menu__item:hover {
-  border-color: #ffbe00;
+  border-color: #e646ff;
 }
 .nav__apper .menu .menu__item--style-filled {
   color: #f6f6eb;
-  background-color: #381fd1;
-  border-color: #381fd1;
+  background-color: #000;
+  border-color: #000;
 }
 @media (width <= 677px) {
   .nav__apper .menu .menu__item--style-filled {
@@ -214,7 +216,7 @@ a.fixed, .fixed a {
   padding: 3rem;
   margin-inline: auto;
   text-transform: capitalize;
-  background-color: #ffbe00;
+  background-color: white;
 }
 
 .work {
@@ -249,6 +251,9 @@ a.fixed, .fixed a {
 }
 
 .fixed--role-contact {
+  position: fixed;
+  right: 3rem; /* 우측 여백 조정 */
+  bottom: 3rem; /* 하단 여백 조정 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,20 +261,20 @@ a.fixed, .fixed a {
   height: 3rem;
   font-weight: 700;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #e646ff;
   border-radius: 50%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s, transform 0.3s;
 }
 .fixed--role-contact:hover {
-  color: #fff;
+  color: #e646ff;
   text-decoration: none;
-  background-color: #e646ff;
+  background-color: #fff;
   transform: scale(1.1);
 }
 .fixed--role-contact::before {
   display: block;
-  content: "MINJO";
+  content: "CONTACT";
   opacity: 0;
   transition: opacity 0.3s;
 }

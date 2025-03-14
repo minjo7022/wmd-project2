@@ -35,7 +35,7 @@ body {
   font-size: 1.125rem;
   line-height: 1.5625rem;
   background-color: nth($bgcolors, 7);
-  background-color: #ffbe00;
+  background-color: #ffff;
   animation-timeline: scroll;
 }
 
@@ -63,9 +63,10 @@ img {
   top: 0;
   z-index: 999;
   padding-inline: 1rem;
-  color: #381fd1;
+  color: #000;
   text-transform: capitalize;
-  background-color: #fffff0;
+  background-color: #ffff;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
 
   &__apper {
     display: grid;
@@ -113,13 +114,13 @@ img {
         transition: border-color 0.3s ease;
 
         &:hover {
-          border-color: #ffbe00;
+          border-color: #e646ff;
         }
 
         &--style-filled {
           color: #f6f6eb;
-          background-color: #381fd1;
-          border-color: #381fd1;
+          background-color: #000;
+          border-color: #000;
         }
 
         @media (width <= 677px) {
@@ -238,7 +239,7 @@ img {
   padding: 3rem;
   margin-inline: auto;
   text-transform: capitalize;
-  background-color: #ffbe00;
+  background-color: #ffff;
 }
 
 .work {
@@ -284,6 +285,9 @@ img {
 }
 
 .fixed--role-contact {
+  position: fixed;
+  right: 3rem; /* 우측 여백 조정 */
+  bottom: 3rem; /* 하단 여백 조정 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,21 +295,21 @@ img {
   height: 3rem;
   font-weight: 700;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #e646ff;
   border-radius: 50%;
   box-shadow: 0 4px 6px rgb(0 0 0 / 10%);
   transition: background-color 0.3s, transform 0.3s;
 
   &:hover {
-    color: #fff;
+    color: #e646ff;
     text-decoration: none;
-    background-color: #e646ff;
+    background-color: #fff;
     transform: scale(1.1);
   }
 
   &::before {
     display: block;
-    content: 'MINJO';
+    content: 'CONTACT';
     opacity: 0;
     transition: opacity 0.3s;
   }
